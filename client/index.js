@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { App } from '../App';
-import { config, executeUserCrudOperations } from './userCrud';
+import { config, executeUserCrudOperations } from './utils/userCrud';
 
 config();
 executeUserCrudOperations();
