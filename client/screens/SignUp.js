@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import axios from 'axios'
 
-const SignUp = () => {
+const SignUp = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -12,7 +12,7 @@ const SignUp = () => {
             alert("All fields required");
             return;
         }
-        const resp = await axios.post("https://localhost:3000/api/signup", { email, password });
+        const resp = await axios.post("http://192.168.0.50:19006/api/signup", { email, password });
         console.log(resp.data);
         alert("Sign up successful")
     }
@@ -32,6 +32,12 @@ const SignUp = () => {
                 <TouchableOpacity onPress={handleSubmit} style={styles.buttonStyle}>
                     <Text style={styles.buttonText}>Submit</Text>
                 </TouchableOpacity>
+                <Text style={{ fontSize: 12, textAlign: 'center' }}>
+                    Already Joined? {" "}
+                    <Text style={{ color: 'darkred', fontWeight: 'bold' }} onPress={() => navigation.navigate("Log In")}>
+                        Log In
+                    </Text>
+                </Text>
 
                 {/* display inputs */}
                 <Text style={{ marginHorizontal: 24 }}>{JSON.stringify({ email, password })}</Text>
@@ -56,10 +62,10 @@ const styles = StyleSheet.create({
         marginBottom: 30,
     },
     buttonStyle: {
-        backgroundColor: 'lightgray',
+        backgroundColor: "darkmagenta",
         height: 50,
         marginBottom: 20,
-        justifyContent: 'center',
+        justifyContent: "center",
         marginHorizontal: 15,
         borderRadius: 15,
     },
@@ -68,7 +74,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#fff',
         textTransform: 'uppercase',
-        fontWeight: 'bold',
+        fontWeight: 'bold'
     },
 })
 
