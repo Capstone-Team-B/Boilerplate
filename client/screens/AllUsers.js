@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllUsers } from '../redux/actions/allUsersActions';
+// import { fetchAllUsers } from '../redux/actions/allUsersActions';
 
 const AllUsers = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const { users, loading, error } = useSelector((state) => state.allUsers);
 
-  useEffect(() => {
-    dispatch(fetchAllUsers());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchAllUsers());
+  // }, [dispatch]);
 
   if (loading) {
     return <Text>Loading...</Text>;

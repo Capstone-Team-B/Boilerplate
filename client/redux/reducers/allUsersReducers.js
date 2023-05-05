@@ -6,7 +6,7 @@ const initialState = {
   error: null
 };
 
-export const allUserSlice = createSlice({
+export const allUsersReducers = createSlice({
   name: 'allUsers',
   initialState,
   reducers: {
@@ -26,4 +26,4 @@ export const allUserSlice = createSlice({
   }
 });
 
-export const { fetchAllUsersStart, fetchAllUsersSuccess, fetchAllUsersError } = allUserSlice.actions;
+export const { fetchAllUsersStart, fetchAllUsersSuccess, fetchAllUsersError } = allUsersReducers.actions;

@@ -2,7 +2,7 @@ const { MongoClient } = require('mongodb');
 
 async function connectToCluster(uri) {
     let mongoClient;
- 
+
     try {
         mongoClient = new MongoClient(uri);
         console.log('Connecting to MongoDB Atlas cluster...');

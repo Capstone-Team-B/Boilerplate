@@ -1,4 +1,5 @@
-const { MongoClient } = require('mongodb');
+import { MongoClient } from 'mongodb';
+import { fetchAllUsersStart, fetchAllUsersSuccess, fetchAllUsersError } from './allUsersReducers.js';
 
 export const fetchAllUsers = () => async dispatch => {
   dispatch(fetchAllUsersStart());
